@@ -32,7 +32,7 @@ int _puts(va_list *ptr);
 
 /*prototype: selects the correct function to print*/
 
-int (*get_func(char *s))(va_list);
+int (*get_func(va_list *ptr))(va_list *ptr);
 
 
 #endif /*_MAIN_H_*/
