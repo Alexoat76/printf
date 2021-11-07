@@ -15,8 +15,8 @@ typedef struct op
 	int (*f)(va_list);
 } op_t;
 
-int print_percent(va_list *ptr);
-int print_char(va_list *ptr);
-int print_string(va_list *ptr);
+int _putper(va_list *ptr);
+int _putchar(va_list *ptr);
+int _puts(va_list *ptr);
 
 int (*get_op_func(char *s))(va_list);
