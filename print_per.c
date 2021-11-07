@@ -6,7 +6,7 @@
  * Return: 0 for success
  */
 
-int print_percent(char *ptr)
+int print_percent(va_list *ptr)
 {
 	int i;
 	void ptr;
