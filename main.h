@@ -35,4 +35,4 @@ int _puts(va_list *ptr);
 int (*get_func(char *s))(va_list);
 
 
-#endif "_MAIN_H_"
+#endif /*_MAIN_H_"*/
