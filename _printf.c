@@ -2,36 +2,36 @@
 
 /**
  * _printf - Function that prints anything.
- * @format: list of types of arguments passed to the function.
- * Return: Printed characters.
+ * @format: character string  composed of zero or more directives
+ * Return: the number of characters printed excluding the null byte
  */
 
-int _printf(const char *format, ...)   /*String:[%s]\n", "I am a string !*/
+int _printf(const char *format, ...)
 {
 	va_list ptr;
 	int i;
-	char *letter = NULL;
-	char *str = NULL;
-	int counted_characters;
+	char *buffer, letter;
 
 	if (format == NULL)
 	{
-		return (-1);
+		return (-1)
 	}
-	va_start(ptr, format);
+	buffer = malloc(sizeof(char) * strlen(format));
+	if (buffer != NULL)
+	{
+		return (NULL);
+	}
+	start(ptr, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (format[i] == '%')
+		if (format[i] != '%')
 		{
-			i++;
-			*letter += format[i];
-			(*get_func(letter))(ptr);
+			buffer[i] = format[i];
 		}
 		else
 		{
-			str[i] = format[i];
-			counted_characters++;
+			i++;
+			letter = format[i];
 		}
 	}
-	return (counted_characters);
 }
