@@ -6,7 +6,7 @@
  * Return: Printed characters.
  */
 
-int _printf(const char *format, ...)
+int _printf(const char *format, ...)   /*String:[%s]\n", "I am a string !*/
 {
 	va_list ptr;
 	int i;
@@ -24,7 +24,6 @@ int _printf(const char *format, ...)
 			i++;
 			function = (*get_func(*ptr[i]))(char);
 			function(ptr);
-			continue;
 		}
 		else
 		{
