@@ -10,7 +10,7 @@
 int (*get_func(char *s))(va_list)
 {
 	op_t ops[] = {
-	{"c", _putchar},
+	{"c", _print_char},
 	{"s", _puts},
 	{"%", _putper},
 	{NULL, NULL}

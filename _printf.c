@@ -12,6 +12,7 @@ int _printf(const char *format, ...)   /*String:[%s]\n", "I am a string !*/
 	int i;
 	char *letter = NULL;
 	char *str = NULL;
+	int counted_characters;
 
 	va_start(ptr, format);
 	if (ptr == NULL)
@@ -29,7 +30,7 @@ int _printf(const char *format, ...)   /*String:[%s]\n", "I am a string !*/
 		else
 		{
 			str[i] = format[i];
-			counted_characters += str[i];
+			counted_characters++;
 		}
 	}
 	return (counted_characters);

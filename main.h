@@ -29,6 +29,7 @@ typedef struct op
 int _putper(char *ptr);
 int _putchar(char *ptr);
 int _puts(char *ptr);
+int _printchar(va_list ptr);
 
 
 /*prototype: selects the correct function to print*/
