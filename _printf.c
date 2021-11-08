@@ -6,12 +6,11 @@
  * Return: Printed characters.
  */
 
-int _printf(const char *format, ...) /*"%S\n", "Best\nSchool"*/
+int _printf(const char *format, ...)
 {
 	va_list ptr;
 	int i;
 	int *function;
-	char letter;
 
 	va_start(ptr, format);
 	if (ptr == NULL)
@@ -23,9 +22,14 @@ int _printf(const char *format, ...) /*"%S\n", "Best\nSchool"*/
 		if (ptr[i] == '%')
 		{
 			i++;
+			function = (*get_func(*ptr[i]))(char);
+			function(ptr);
+			continue;
+		}
+		else
+		{
+			_putchar(ptr[i]);
 		}
 	}
-	function = (*get_func(*ptr[i]))(ptr[i]);
-	function(ptr);
-	return (0);
+	return (i);
 }
