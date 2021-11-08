@@ -11,34 +11,34 @@ int _printf(const char *format, ...)
 	va_list ptr;
 	int i;
 	char *buffer, letter_function;
-	int function;
+	int (*function)(va_list);
 
 	if (format == NULL)
 	{
 		return (-1);
 	}
-	buffer = malloc(sizeof(char) * _strlen(format));
+	buffer = malloc(sizeof(char) * 1024);
 	if (buffer == NULL)
 	{
-		return (NULL);
+		return (-1);
 	}
-	start(ptr, format);
+	va_start(ptr, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
 		{
-			buffer += format[i];
+			buffer[i] = format[i];
 		}
 		else
 		{
 			i++;
 			letter_function = format[i];
-			buffer += (*get_func(letter))(va_list);    /* print_string(va_list)  /*Len:[%d]\n", len"*/
+			function = (*get_func(&letter_function))(ptr);
 		}
-	}
-	for (i = 0; buffer[i] != '\0'; i++)
-	{
+		for (i = 0; buffer[i] != '\0'; i++)
+		{
 		_putchar(buffer[i]);
+		}
+		return (i);
 	}
-	return (i);
 }
