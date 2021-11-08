@@ -2,19 +2,19 @@
 
 /**
  * _puts - prints a string
- * @string: input string
+ * @ptr: input string
  * Return: count of string.
  */
 
-int _puts(char *string)
+int _puts(va_list ptr)
 {
-	int i = 0;
+	int i;
+	char *str;
 
-	while (*string != '\0')
+	for (i = 0; ptr; i++)
 	{
-		_putchar(*string);
-		string++;
-		i++;
+		str += ptr[i];
+		_putchar(str[i]);
 	}
 	return (i);
 }

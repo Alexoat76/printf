@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <unistd.h>
 
 /*
  * File: main.h
@@ -25,9 +26,9 @@ typedef struct op
 
 /*protypes of functions*/
 
-int _putper(va_list *ptr);
-int _putchar(va_list *ptr);
-int _puts(va_list *ptr);
+int _putper(va_list);
+int _putchar(va_list);
+int _puts(va_list);
 
 
 /*prototype: selects the correct function to print*/

@@ -10,8 +10,8 @@ int _printf(const char *format, ...)   /*String:[%s]\n", "I am a string !*/
 {
 	va_list ptr;
 	int i;
-	int function;
 	char *letter = NULL;
+	char *str = NULL;
 
 	va_start(ptr, format);
 	if (ptr == NULL)
@@ -24,13 +24,12 @@ int _printf(const char *format, ...)   /*String:[%s]\n", "I am a string !*/
 		{
 			i++;
 			*letter += format[i];
-			function = (*get_func(letter))(ptr);
-			function(letter);
+			(*get_func(letter))(ptr);
 		}
 		else
 		{
-			_putchar(ptr[i]);
+			str[i] = format[i];
 		}
 	}
-	return (o);
+	return (0);
 }
