@@ -26,10 +26,9 @@ typedef struct op
 
 /*protypes of functions*/
 
-int _putper(char *ptr);
-int _putchar(char *ptr);
-int _puts(char *ptr);
-int _printchar(va_list ptr);
+int print_percent(void);
+int print_char(va_list c);
+int print_string(va_list s);
 
 
 /*prototype: selects the correct function to print*/
