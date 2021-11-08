@@ -29,7 +29,8 @@ int _printf(const char *format, ...)   /*String:[%s]\n", "I am a string !*/
 		else
 		{
 			str[i] = format[i];
+			counted_characters += str[i];
 		}
 	}
-	return (0);
+	return (counted_characters);
 }
