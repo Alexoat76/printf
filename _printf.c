@@ -32,5 +32,5 @@ int _printf(const char *format, ...)   /*String:[%s]\n", "I am a string !*/
 			_putchar(ptr[i]);
 		}
 	}
-	return (i);
+	return (o);
 }
