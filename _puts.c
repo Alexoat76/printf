@@ -6,15 +6,14 @@
  * Return: count of string.
  */
 
-int _puts(va_list ptr)
+int _puts(char *ptr)
 {
 	int i;
-	char *str;
 
 	for (i = 0; ptr; i++)
 	{
-		str += ptr[i];
-		_putchar(str[i]);
+		_putchar(*ptr);
+		ptr++;
 	}
 	return (i);
 }

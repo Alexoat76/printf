@@ -6,7 +6,7 @@
  * Return: 0 for success
  */
 
-int print_percent(va_list ptr)
+int _putper(char *ptr)
 {
 	_putchar(ptr);
 	return (0);
