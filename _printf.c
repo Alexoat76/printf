@@ -27,6 +27,5 @@ int _printf(const char *format, ...) /*"%S\n", "Best\nSchool"*/
 	}
 	function = (*get_func(*ptr[i]))(ptr[i]);
 	function(ptr);
-
-	return ();
+	return (0);
 }
