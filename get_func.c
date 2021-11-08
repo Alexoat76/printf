@@ -18,7 +18,7 @@ int (*get_func(char *s))(va_list)
 	int i;
 
 	i = 0;
-	while (ops[i].op != va_list)
+	while (ops[i].op != s)
 	{
 		i++;
 	}
