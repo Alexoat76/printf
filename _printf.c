@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 	va_list ptr;
 	int i, j, k, run_buffer;
 	char buffer[2048];
-	const char *letter_function;
+	char *letter_function;
 	int (*function)(va_list);              /*1[%s]\n, "abc" */
 
 	if (format == NULL)
@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			letter_function = &format[i];
-			function = get_function(letter_function)(ptr);
+			function = (*get_function(letter_function))(ptr);
 			if (function == NULL)
 			{
 				for (j = 0; j <= i; j++ )

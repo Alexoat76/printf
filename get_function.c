@@ -22,5 +22,5 @@ int (*get_function(char *s))(va_list)
 	{
 		i++;
 	}
-	return (ops[i].f);
+	return (ops[i].function);
 }
