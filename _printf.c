@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 	va_list ptr;
 	int i, j, k, run_buffer;
 	char buffer[2048];
-	char *letter_function;
+	const char *letter_function;
 	int (*function)(va_list);              /*1[%s]\n, "abc" */
 
 	if (format == NULL)

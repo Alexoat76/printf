@@ -8,7 +8,7 @@
 
 In this project you can find a small version of printf that can handle the following format specification: c, s, %, d and i.
 This version cannot handle flag characters, field width, precision and length modifiers.
-Also, a holberton.h file was created.
+Also, a main.h file was created.
 
 This Printf function customized  was developed by Holberton Students of cohort 16,
 Joana Casallas and Alex Arevalo.
