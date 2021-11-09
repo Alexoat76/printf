@@ -33,6 +33,7 @@ int print_char(va_list c);
 int print_string(va_list s);
 int _strlen(char *format);
 int _putchar(char c);
+int _printf(const char *format, ...);
 
 
 /*prototype: selects the correct function to print*/
