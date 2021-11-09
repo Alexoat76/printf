@@ -46,7 +46,7 @@ The main files will include your main header file (main.h):
 #include main.h
 
 ## 🚀Flowchart _Printf Function
-![_Printf Flowchart](https://miro.medium.com/max/1400/1*VZ-Nxsq5aGeO5L_E2Rm3rQ.jpeg)
+![_Printf Flowchart](https://cdn-images-1.medium.com/max/800/1*5j-rfA_4yZ467hEawAsKTA.jpeg)
 ## **Use & Examples**
 
 **Specifier	Output	Examples**
