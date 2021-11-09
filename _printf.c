@@ -9,19 +9,15 @@
 int _printf(const char *format, ...)
 {
 	va_list ptr;
-	int i, j, k;
-	char *buffer = NULL, letter_function;
+	int i, j, k, run_buffer;
+	char buffer[2048];
+	char *letter_function;
 	int (*function)(va_list);              /*1[%s]\n, "abc" */
-	const char *filename = "main.c";
-	int fd = open(filename, O_WRONLY);
-	unsigned int buffer_size = (sizeof(char) * 1024);
 
-	if (fd == -1)
+	if (format == NULL)
 	{
-		perror("open");
-		exit(EXIT_FAILURE);
+		return (-1);
 	}
-	write(fd, buffer, buffer_size);
 	va_start(ptr, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
@@ -32,28 +28,26 @@ int _printf(const char *format, ...)
 		else
 		{
 			i++;
-			letter_function = format[i];
-			function = (*get_func(&letter_function))(ptr);
+			letter_function = &format[i];
+			function = get_function(letter_function)(ptr);
 			if (function == NULL)
 			{
-				for (j = 0; format[j] != '\0'; j++ )
+				for (j = 0; j <= i; j++ )
 				{
-					free(format[j]);
-					return (-1);
+					free(buffer[j]);
 				}
-				free(format);
-				i++;
+				free(buffer);
+				return (-1);
 			}
+			for (k = 0; k < i; k++)
+			{
+				_putchar(buffer[k]);
+			}
+			run_buffer = function(ptr);
+			i++;
 		}
-		for (k = 0; k <= i; k++)
-		{
-			_putchar(buffer[k]);
-		}
-		run_buffer = function(ptr);
-		i++;
+		_putchar('\0');
+		va_end(ptr);
 	}
-	_putchar('\0');
-	close(fd);
-	va_end(ptr);
-	return (k + run_buffer + i);
+	return (i + run_buffer);
 }

@@ -37,7 +37,7 @@ int _putchar(char c);
 
 /*prototype: selects the correct function to print*/
 
-int (*get_func(char *s))(va_list);
+int (*get_function(char *s))(va_list);
 
 
 #endif /*_MAIN_H_*/

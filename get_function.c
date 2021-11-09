@@ -7,7 +7,7 @@
  * to the format given as a parameter.
  */
 
-int (*get_func(char *s))(va_list)
+int (*get_function(char *s))(va_list)
 {
 	op_t ops[] = {
 	{"c", print_char},
