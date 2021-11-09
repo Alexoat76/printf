@@ -50,9 +50,10 @@ int _printf(const char *format, ...)
 			_putchar(buffer[k]);
 		}
 		run_buffer = function(ptr);
+		i++;
 	}
 	_putchar('\0');
 	close(fd);
 	va_end(ptr);
-	return (k + run_buffer + );
+	return (k + run_buffer + i);
 }
