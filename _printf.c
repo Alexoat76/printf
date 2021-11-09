@@ -9,19 +9,19 @@
 int _printf(const char *format, ...)
 {
 	va_list ptr;
-	int i;
-	char *buffer, letter_function;
-	int (*function)(va_list);
+	int i, j, k;
+	char *buffer = NULL, letter_function;
+	int (*function)(va_list);              /*1[%s]\n, "abc" */
+	const char *filename = "main.c";
+	int fd = open(filename, O_WRONLY);
+	unsigned int buffer_size = (sizeof(char) * 1024);
 
-	if (format == NULL)
+	if (fd == -1)
 	{
-		return (-1);
+		perror("open");
+		exit(EXIT_FAILURE);
 	}
-	buffer = malloc(sizeof(char) * 1024);
-	if (buffer == NULL)
-	{
-		return (-1);
-	}
+	write(fd, buffer, buffer_size);
 	va_start(ptr, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
@@ -34,11 +34,25 @@ int _printf(const char *format, ...)
 			i++;
 			letter_function = format[i];
 			function = (*get_func(&letter_function))(ptr);
+			if (function == NULL)
+			{
+				for (j = 0; format[j] != '\0'; j++ )
+				{
+					free(format[j]);
+					return (-1);
+				}
+				free(format);
+				i++;
+			}
 		}
-		for (i = 0; buffer[i] != '\0'; i++)
+		for (k = 0; k <= i; k++)
 		{
-		_putchar(buffer[i]);
+			_putchar(buffer[k]);
 		}
-		return (i);
+		run_buffer = function(ptr);
 	}
+	_putchar('\0');
+	close(fd);
+	va_end(ptr);
+	return (k + run_buffer + );
 }
