@@ -34,9 +34,8 @@ int _printf(const char *format, ...)
 			{
 				for (j = 0; j <= i; j++ )
 				{
-					free(buffer[j]);
+					free(*buffer[j]);
 				}
-				free(buffer);
 				return (-1);
 			}
 			for (k = 0; k < i; k++)
