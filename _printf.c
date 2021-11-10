@@ -9,15 +9,14 @@
 int _printf(const char *format, ...)
 {
 	va_list ptr;
-	int i, k, run_buffer;
+	int i, k;
 	char buffer[2048];
 	char letter_function;
-	int (*function)(va_list);              /*1[%s]\n, "abc" */
+	int (*function)(va_list);
 
-	if (format == NULL)
-	{
+	if (format == NULL || ptr == NULL ||
+			(format[0] == '%' && format[1] == '\0'))
 		return (-1);
-	}
 	va_start(ptr, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
@@ -27,22 +26,18 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			i++;
-			letter_function = format[i];
+			letter_function = format[i + 1];
 			function = get_function(&letter_function);
 			if (function == NULL)
 			{
 				return (-1);
 			}
-			for (k = 0; k < i; k++)
-			{
-				_putchar(buffer[k]);
-			}
-			run_buffer = function(ptr);
-			i++;
 		}
-		_putchar('\0');
-		va_end(ptr);
 	}
-	return (i + run_buffer);
+	for (k = 0; k < i; k++)
+	{
+		_putchar(buffer[i]);
+	}
+	va_end(ptr);
+	return (i);
 }
