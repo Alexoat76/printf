@@ -9,16 +9,14 @@
 
 int print_string(va_list s)
 {
-	char *str;
-	int  i = 0;
+	unsigned char character;
+	int ret = 0;
 
-	str = va_arg(s, char *);
-	if (str == NULL)
-		str = "(null)";
-	while (str[i])
+	for (ret = 0; ret != '\0'; ret++)
 	{
-		_putchar(str[i]);
-		i++;
+		character = va_arg(c, int);
+		_putchar(character);
+		ret++;
 	}
-	return (i);
+	return (ret);
 }
