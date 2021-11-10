@@ -17,13 +17,13 @@
 /**
  * struct op - Struct op
  * @op: The operator.
- * @f: The function associated.
+ * @function: The function associated.
  */
 
 typedef struct op
 {
 	char *op;
-	int (*f)(va_list);
+	int (*function)(va_list);
 } op_t;
 
 /*protypes of functions*/
@@ -31,8 +31,9 @@ typedef struct op
 int print_percent(va_list c);
 int print_char(va_list c);
 int print_string(va_list s);
-int _strlen(const char *format);
+int _strlen(char *format);
 int _putchar(char c);
+int _printf(const char *format, ...);
 
 
 /*prototype: selects the correct function to print*/
