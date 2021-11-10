@@ -21,8 +21,8 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 		{
-		  _putchar(format[i]);
-		  ret++;
+			_putchar(format[i]);
+			ret++;
 		}
 		else
 		{
@@ -35,11 +35,11 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-			  _putchar(format[i]);
+				_putchar(format[i]);
 			  ret++;
 			}
 		}
-        }
+	}
 	va_end(ptr);
 	return (ret);
 }

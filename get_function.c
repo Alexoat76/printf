@@ -19,10 +19,8 @@ int (*get_function(char *s))(va_list)
 
 	for (i = 0; ops[i].function; i++)
 	{
-	    if (ops[i].op == *s)
-	      return (ops[i].function);
+		if (ops[i].op == *s)
+			return (ops[i].function);
 	}
-
 	return (NULL);
-	
 }
