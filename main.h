@@ -33,7 +33,6 @@ int print_string(va_list s);
 int _strlen(char *format);
 int _putchar(char c);
 int _printf(const char *format, ...);
-int print_hex(unsigned int n, unsigned int c);
 int print_int(va_list i);
 int print_octal(va_list o);
 int print_rev(va_list r);

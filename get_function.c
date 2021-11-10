@@ -18,8 +18,6 @@ int (*get_function(char *s))(va_list)
 	{'b', print_bin},
 	{'u', print_unsig},
 	{'o', print_octal},
-	{'x', print_x},
-	{'X', print_X},
 	{'R', print_rot13},
 	{0, NULL}
 	};
