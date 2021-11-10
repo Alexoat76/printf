@@ -12,7 +12,6 @@ int (*get_function(char *s))(va_list)
 	op_t ops[] = {
 	{'c', print_char},
 	{'s', print_string},
-	{'%', print_percent},
 	{0, NULL}
 	};
 	int i;

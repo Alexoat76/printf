@@ -9,13 +9,15 @@
 
 int print_string(va_list s)
 {
-	unsigned char character;
-	int ret = 0;
+	char *string;
+	int  ret = 0;
 
-	for (ret = 0; ret != '\0'; ret++)
+	string = va_arg(s, char *);
+	if (string == NULL)
+		string = "(null)";
+	while (string[ret])
 	{
-		character = va_arg(s, int);
-		_putchar(character);
+		_putchar(string[ret]);
 		ret++;
 	}
 	return (ret);

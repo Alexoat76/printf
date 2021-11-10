@@ -28,7 +28,6 @@ typedef struct op
 
 /*protypes of functions*/
 
-int print_percent(va_list c);
 int print_char(va_list c);
 int print_string(va_list s);
 int _strlen(char *format);
