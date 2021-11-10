@@ -14,7 +14,7 @@ int print_string(va_list s)
 
 	for (ret = 0; ret != '\0'; ret++)
 	{
-		character = va_arg(c, int);
+		character = va_arg(s, int);
 		_putchar(character);
 		ret++;
 	}
