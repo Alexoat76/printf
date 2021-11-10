@@ -10,17 +10,19 @@
 int (*get_function(char *s))(va_list)
 {
 	op_t ops[] = {
-	{"c", print_char},
-	{"s", print_string},
-	{"%", print_percent},
-	{NULL, NULL}
+	{'c', print_char},
+	{'s', print_string},
+	{'%', print_percent},
+	{0, NULL}
 	};
 	int i;
 
-	i = 0;
-	while (ops[i].op != s && i < 4)
+	for (i = 0; ops[i].function; i++)
 	{
-		i++;
+	    if (ops[i].op == *s)
+	      return (ops[i].function);
 	}
-	return (ops[i].function);
+
+	return (NULL);
+	
 }

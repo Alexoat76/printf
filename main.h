@@ -22,7 +22,7 @@
 
 typedef struct op
 {
-	char *op;
+	char op;
 	int (*function)(va_list);
 } op_t;
 

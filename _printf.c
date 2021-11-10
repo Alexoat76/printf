@@ -9,8 +9,7 @@
 int _printf(const char *format, ...)
 {
 	va_list ptr;
-	int i, k;
-	char buffer[2048];
+	int i, ret;
 	char letter_function;
 	int (*function)(va_list);
 
@@ -22,7 +21,8 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 		{
-			buffer[i] = format[i];
+		  _putchar(format[i]);
+		  ret++;
 		}
 		else
 		{
@@ -30,15 +30,16 @@ int _printf(const char *format, ...)
 			{
 				letter_function = format[i + 1];
 				function = get_function(&letter_function);
+				ret += function(ptr);
+				i++;
 			}
 			else
-				buffer[i] = format[i];
+			{
+			  _putchar(format[i]);
+			  ret++;
+			}
 		}
-	}
-	for (k = 0; k < i; k++)
-	{
-		_putchar(buffer[k]);
-	}
+        }
 	va_end(ptr);
-	return (1);
+	return (ret);
 }
