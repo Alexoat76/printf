@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * get_func - function that choose.
+ * get_function - function that choose.
  * @s: list of types of arguments passed to the function.
  * Return: Pointer to the function that corresponds
  * to the format given as a parameter.

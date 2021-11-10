@@ -26,18 +26,19 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			letter_function = format[i + 1];
-			function = get_function(&letter_function);
-			if (function == NULL)
+			if (format[i + 1] != '\0')
 			{
-				return (-1);
+				letter_function = format[i + 1];
+				function = get_function(&letter_function);
 			}
+			else
+				buffer[i] = format[i];
 		}
 	}
 	for (k = 0; k < i; k++)
 	{
-		_putchar(buffer[i]);
+		_putchar(buffer[k]);
 	}
 	va_end(ptr);
-	return (i);
+	return (1);
 }
