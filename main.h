@@ -33,6 +33,15 @@ int print_string(va_list s);
 int _strlen(char *format);
 int _putchar(char c);
 int _printf(const char *format, ...);
+int print_hex(unsigned int n, unsigned int c);
+int print_int(va_list i);
+int print_octal(va_list o);
+int print_rev(va_list r);
+int print_rot13(va_list R);
+int print_unsig(va_list u);
+int print_dec(va_list d);
+int print_bin(va_list b);
+
 
 
 /*prototype: selects the correct function to print*/

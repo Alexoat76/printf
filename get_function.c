@@ -12,6 +12,15 @@ int (*get_function(char *s))(va_list)
 	op_t ops[] = {
 	{'c', print_char},
 	{'s', print_string},
+	{'i', print_int},
+	{'d', print_dec},
+	{'r', print_rev},
+	{'b', print_bin},
+	{'u', print_unsig},
+	{'o', print_octal},
+	{'x', print_x},
+	{'X', print_X},
+	{'R', print_rot13},
 	{0, NULL}
 	};
 	int i;
