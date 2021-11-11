@@ -19,11 +19,21 @@ int _printf(const char *format, ...)
 	va_start(ptr, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (format[i] == '%' && format[i + 1] == '%')
+		if (format[i] == '%')
 		{
-			i++;
-			_putchar('%');
-			ret++;
+			if (format[i + 1] == '%')
+			{
+				i++;
+				_putchar('%');
+				ret++;
+			}
+			else if (format[i + 1] == '!')
+			{
+				i++;
+				_putchar('%');
+				_putchar('!');
+				ret++;
+			}
 		}
 		else if (format[i] != '%')
 		{
