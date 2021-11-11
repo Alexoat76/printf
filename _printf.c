@@ -19,6 +19,11 @@ int _printf(const char *format, ...)
 	va_start(ptr, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
+		if (format[i] != '%')
+		{
+			_putchar(format[i]);
+			ret++;
+		}
 		if (format[i] == '%')
 		{
 			if (format[i + 1] == '%')
@@ -29,20 +34,12 @@ int _printf(const char *format, ...)
 			}
 			else if (format[i + 1] == '!')
 			{
-				i += 2;
+				i++;
 				_putchar('%');
 				_putchar('!');
-				ret += 2;
+				ret++;
 			}
-		}
-		else if (format[i] != '%')
-		{
-			_putchar(format[i]);
-			ret++;
-		}
-		else
-		{
-			if (format[i + 1] != '\0')
+			else if (format[i + 1] != '\0')
 			{
 				letter_function = format[i + 1];
 				function = get_function(&letter_function);
