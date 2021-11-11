@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 			_putchar(format[i]);
 			ret++;
 		}
-		if (format[i] == '%')
+		else
 		{
 			if (format[i + 1] == '%')
 			{
