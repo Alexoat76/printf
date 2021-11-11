@@ -34,9 +34,7 @@ int _printf(const char *format, ...)
 			}
 			else if (format[i + 1] == '!')
 			{
-				i++;
 				_putchar('%');
-				_putchar('!');
 				ret++;
 			}
 			else if (format[i + 1] != '\0')
