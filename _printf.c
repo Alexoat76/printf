@@ -2,7 +2,7 @@
 
 /**
  * _printf - Function that prints anything.
- * @format: character string  composed of zero or more directives
+ * @format: character string  composed of zero or more directives.
  * Return: the number of characters printed excluding the null byte
  */
 
