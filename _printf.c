@@ -46,11 +46,6 @@ int _printf(const char *format, ...)
 				ret += function(ptr);
 				i++;
 			}
-			else
-			{
-				_putchar(format[i]);
-				ret++;
-			}
 		}
 	}
 	va_end(ptr);
