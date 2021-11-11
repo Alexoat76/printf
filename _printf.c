@@ -32,12 +32,7 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				ret++;
 			}
-			else if (format[i + 1] == '!')
-			{
-				_putchar('%');
-				ret++;
-			}
-			else if (format[i + 1] == 'K')
+			else if (format[i + 1] == '!' || format[i + 1] == 'K')
 			{
 				_putchar('%');
 				ret++;
