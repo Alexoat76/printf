@@ -29,10 +29,10 @@ int _printf(const char *format, ...)
 			}
 			else if (format[i + 1] == '!')
 			{
-				i++;
+				i += 2;
 				_putchar('%');
 				_putchar('!');
-				ret++;
+				ret += 2;
 			}
 		}
 		else if (format[i] != '%')

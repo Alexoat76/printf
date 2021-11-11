@@ -9,9 +9,8 @@
  */
 int main(void)
 {
-	_printf("%!\n");
-	printf("%!\n");
-	_printf("%");
-	printf("%");
-	return (0);
+
+_printf("%");
+printf("%");
+return (0);
 }
