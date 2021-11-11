@@ -37,6 +37,11 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				ret++;
 			}
+			else if (format[i + 1] == 'K')
+			{
+				_putchar('%');
+				ret++;
+			}
 			else if (format[i + 1] != '\0')
 			{
 				letter_function = format[i + 1];

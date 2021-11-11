@@ -9,7 +9,8 @@
  */
 int main(void)
 {
-
+	_printf("%K\n");
+	printf("%K\n");
 _printf("%");
 printf("%");
 _printf("Let's try to printf a simple sentence.\n");
